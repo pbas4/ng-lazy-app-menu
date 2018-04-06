@@ -1,0 +1,13 @@
+
+<app-comp1-header></app-comp1-header>
+<hr><hr>
+
+<h2>Comp1 Home Component</h2>
+
+<ul>
+  <li *ngFor="let i from array$">{{ i | async }}</li>
+  <li>{{ array$ | async }}</li>
+</ul>
+
+<hr><hr>
+<app-comp1-footer></app-comp1-footer>

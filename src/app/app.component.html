@@ -1,0 +1,16 @@
+<h1>Lazy App</h1>
+
+<div class="wrapper">
+    <span
+      class="icon"
+      [ngClass]="open ? 'icon-open' : 'icon-close'"
+      (click)="menuToggle()">
+    </span>
+
+    <div
+      class="mask"
+      [ngClass]="mask ? 'mask-enter' : 'mask-exit'">
+    </div>
+</div>
+
+<router-outlet></router-outlet>

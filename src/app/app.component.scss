@@ -1,0 +1,86 @@
+.icon, .icon-open, .icon-close {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  cursor: pointer;
+  left: 90%;
+  top: -5%;
+  z-index: 2;
+
+  &:hover::after, &:hover::before {
+    background-color: lighten(cornflowerblue, 15%);
+  }
+
+  &::after, &::before {
+    content: '';
+    display: inline-block;
+    width: 50px;
+    height: 4px;
+    background-color: cornflowerblue;
+    position: absolute;
+    transition: .3s all;
+  }
+}
+
+.icon-open {
+  &::after {
+    transform: translateY(20px);
+  }
+}
+
+.icon-close {
+  transition: .4s all;
+  &::after {
+    transform: translateY(10px) rotate(45deg);
+    background-color: #fff;
+  }
+  &::before {
+    transform: translateY(10px) rotate(-45deg);
+    background-color: #fff;
+  }
+}
+
+
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.mask {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: cornflowerblue;
+  z-index: 1;
+  transition: .8s all;
+  display: none;
+  opacity: 0;
+}
+
+.mask-enter {
+  display: block;
+  animation: enter 1s forwards;
+}
+
+.mask-exit {
+  animation: exit 1s forwards;
+}
+
+@keyframes enter {
+  from { opacity: 0}
+  to { opacity: 1}
+}
+
+@keyframes exit {
+  0% { opacity: 1 }
+  95% { opacity: 0}
+  100% { display: none }
+}
+
